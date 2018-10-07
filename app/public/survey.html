@@ -37,8 +37,8 @@
 
             <form role=>
               <div class=>
-                <label for="FriendName">Name (Required)</label>
-                <input type="text" class="form-control" id="FriendName">
+                <label for="name">Name (Required)</label>
+                <input type="text" class="form-control" id="name">
               </div>
 
               <div class=>
@@ -51,102 +51,102 @@
                 <h4>Your mind is always buzzing with unexplored ideas and plans.</h4>
                 <select class="chosen-select" id="q1">
                   <option value=""></option>
-                  <option value="1">1 y Disagree)</option>
+                  <option value="1">1 Disagree</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
                   <option value="4">4</option>
-                  <option value="5">5 y Agree)</option>
+                  <option value="5">5 Agree</option>
                 </select>
                 <h3>Question 2</h3>
                 <h4>Generally speaking, you rely more on your experience than your imagination.</h4>
                 <select class="chosen-select" id="q2">
                   <option value=""></option>
-                  <option value="1">1 y Disagree)</option>
+                  <option value="1">1 Disagree</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
                   <option value="4">4</option>
-                  <option value="5">5 y Agree)</option>
+                  <option value="5">5 Agree</option>
                 </select>
                 <h3>Question 3</h3>
                 <h4>You find it easy to stay relaxed and focused even when there is some pressure.</h4>
                 <select class="chosen-select" id="q3">
                   <option value=""></option>
-                  <option value="1">1 y Disagree)</option>
+                  <option value="1">1 Disagree</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
                   <option value="4">4</option>
-                  <option value="5">5 y Agree)</option>
+                  <option value="5">5 Agree</option>
                 </select>
                 <h3>Question 4</h3>
                 <h4>You rarely do something just out of sheer curiosity.</h4>
                 <select class="chosen-select" id="q4">
                   <option value=""></option>
-                  <option value="1">1 y Disagree)</option>
+                  <option value="1">1 Disagree</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
                   <option value="4">4</option>
-                  <option value="5">5 y Agree)</option>
+                  <option value="5">5 Agree</option>
                 </select>
                 <h3>Question 5</h3>
                 <h4>People can rarely upset you.</h4>
                 <select class="chosen-select" id="q5">
                   <option value=""></option>
-                  <option value="1">1 y Disagree)</option>
+                  <option value="1">1 Disagree</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
                   <option value="4">4</option>
-                  <option value="5">5 y Agree)</option>
+                  <option value="5">5 Agree</option>
                 </select>
                 <h3>Question 6</h3>
                 <h4>It is often difficult for you to relate to other people’s feelings.</h4>
                 <select class="chosen-select" id="q6">
                   <option value=""></option>
-                  <option value="1">1 y Disagree)</option>
+                  <option value="1">1 Disagree</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
                   <option value="4">4</option>
-                  <option value="5">5 y Agree)</option>
+                  <option value="5">5 Agree</option>
                 </select>
                 <h3>Question 7</h3>
                 <h4>In a discussion, truth should be more important than people’s sensitivities.</h4>
                 <select class="chosen-select" id="q7">
                   <option value=""></option>
-                  <option value="1">1 y Disagree)</option>
+                  <option value="1">1 Disagree</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
                   <option value="4">4</option>
-                  <option value="5">5 y Agree)</option>
+                  <option value="5">5 Agree</option>
                 </select>
                 <h3>Question 8</h3>
                 <h4>You rarely get carried away by fantasies and ideas.</h4>
                 <select class="chosen-select" id="q8">
                   <option value=""></option>
-                  <option value="1">1 y Disagree)</option>
+                  <option value="1">1 Disagree</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
                   <option value="4">4</option>
-                  <option value="5">5 y Agree)</option>
+                  <option value="5">5 Agree</option>
                 </select>
                 <h3>Question 9</h3>
                 <h4>You think that everyone’s views should be respected regardless of whether they are supported by
                   facts or not.</h4>
                 <select class="chosen-select" id="q9">
                   <option value=""></option>
-                  <option value="1">1 y Disagree)</option>
+                  <option value="1">1 Disagree</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
                   <option value="4">4</option>
-                  <option value="5">5 y Agree)</option>
+                  <option value="5">5 Agree</option>
                 </select>
                 <h3>Question 10</h3>
                 <h4>You feel more energetic after spending time with a group of people.</h4>
-                <select class="chosen-select" id="10">
+                <select class="chosen-select" id="q10">
                   <option value=""></option>
-                  <option value="1">1 y Disagree)</option>
+                  <option value="1">1 Disagree</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
                   <option value="4">4</option>
-                  <option value="5">5 y Agree)</option>
+                  <option value="5">5 Agree</option>
                 </select>
               </div>
               <hr>
@@ -186,18 +186,20 @@
 
     // Here we grab the form elements
     var newFriend = {
-      friednName: $("#friendName").val().trim(),
+      name: $("#name").val().trim(),
       Photo: $("#photo").val().trim(),
-      Question1: $("#q1").val().trim(),
-      Question2: $("#q2").val().trim(),
-      Question3: $("#q3").val().trim(),
-      Question4: $("#q4").val().trim(),
-      Question5: $("#q5").val().trim(),
-      Question6: $("#q6").val().trim(),
-      Question7: $("#q7").val().trim(),
-      Question8: $("#q8").val().trim(),
-      Question9: $("#q9").val().trim(),
-      Question10: $("#q10").val().trim(),
+      scores: [
+            $("#q1").val(),
+            $("#q2").val(),
+            $("#q3").val(),
+            $("#q4").val(),
+            $("#q5").val(),
+            $("#q6").val(),
+            $("#q7").val(),
+            $("#q8").val(),
+            $("#q9").val(),
+            $("#q10").val()
+          ]
     };
 
     console.log(newFriend);
@@ -207,21 +209,13 @@
     // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
     // depending on if a tables is available or not.
 
-    $.post("/api/tables", newFriend,
+    $.post("/api/friends", newFriend,
       function (data) {
 
-        // If a table is available... tell user they are booked.
-        if (data) {
-          alert("Yay! You are officially in the Friend network!");
-        }
-
-        // If a table is available... tell user they on the waiting list.
-        else {
-          alert("Sorry you are on the wait list");
-        }
-
+        alert("Yay! You are officially in the Friend network!");
+      
         // Clear the form when submitting
-        $("#friendName").val("");
+        $("#name").val("");
         $("#photo").val("");
         $("#q1").val("");
         $("#q2").val("");

@@ -4,30 +4,37 @@
 //    * A POST routes `/api/friends`. This will be used to handle incoming survey results. 
 //    * This route will also be used to handle the compatibility logic. 
 
-var bodyParser = require("body-parser");
-var path = require("path");
-
+var friends = require("../data/friends");
+console.log(friends);
 module.exports = function(app) {
 
-
-app.get("/app/data/friends", function (req, res) {
-    res.sendFile(path.join(__dirname, "/app/data/friends"));
+app.get("/api/friends", function (req, res) {
+    res.json(friends);
 });
 
+
 app.post("/api/friends", function (req, res) {
-    // req.body hosts is equal to the JSON post sent from the user
-    // This works because of our body-parser middleware
-    var newFriend = req.body;
+    var you = (req.body)
+    console.log(you)
+    friends.push(req.body);
+    res.json(true);
+    console.log(friends);
 
-    // Using a RegEx Pattern to remove spaces from newFriens
-    // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-    newFriend.routeName = newFriend.name.replace(/\s+/g, "").toLowerCase();
+    //    * This route will also be used to handle the compatibility logic. 
+    // Determine the user's most compatible friend using the following as a guide:
+    // * Convert each user's results into a simple array of numbers (ex: `[5, 1, 4, 4, 5, 1, 2, 5, 4, 1]`).
 
-    console.log(newFriend);
+    //         for each friend in friends
+    //         friend1 = 
+        
 
-    friends.push(newFriend);
-
-    res.json(newFriend);
+    // * With that done, compare the difference between current user's scores against those from other users, question by question. Add up the differences to calculate the `totalDifference`.
+    //   * Example: 
+    //     * User 1: `[5, 1, 4, 4, 5, 1, 2, 5, 4, 1]`
+    //     * User 2: `[3, 2, 6, 4, 5, 1, 2, 5, 4, 1]`
+    //     * Total Difference: **2 + 1 + 2 =** **_5_**
+    // * Remember to use the absolute value of the differences. Put another way: no negative solutions! Your app should calculate both `5-3` and `3-5` as `2`, and so on. 
+    // * The closest match will be the user with the least amount of difference.
 });
 }
 
@@ -37,4 +44,3 @@ app.post("/api/friends", function (req, res) {
 // These data sources hold arrays of information on friends.
 // ===============================================================================
 
-var friends = require("../data/friends");
