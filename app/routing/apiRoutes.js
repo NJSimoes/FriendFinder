@@ -22,11 +22,18 @@ app.post("/api/friends", function (req, res) {
 
     //    * This route will also be used to handle the compatibility logic. 
     // Determine the user's most compatible friend using the following as a guide:
-    // * Convert each user's results into a simple array of numbers (ex: `[5, 1, 4, 4, 5, 1, 2, 5, 4, 1]`).
+    // * Convert each friends's results into a simple array of numbers (ex: `[5, 1, 4, 4, 5, 1, 2, 5, 4, 1]`).
 
-    //         for each friend in friends
-    //         friend1 = 
+    //         for each person in friends
+            var i = 0
+            for (name in friends) {
+                i++;
+                console.log(scores);
+            }
+    //         person[i] = friends.scores
         
+
+
 
     // * With that done, compare the difference between current user's scores against those from other users, question by question. Add up the differences to calculate the `totalDifference`.
     //   * Example: 
